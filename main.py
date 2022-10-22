@@ -78,12 +78,14 @@ def checkUpdate():
 	web_byte = urlopen(req).read()
 	lasted_version = int(web_byte.decode('utf-8'))
 	current_version = int(open('version','r').read())
+	print(lasted_version,current_version)
 	if lasted_version > current_version:
 		rprint('[green] New version available. Updating version')
 		main_file = "https://raw.githubusercontent.com/Rouxhero/SurpriseMe/master/main.py"
 		req = Request(main_file, headers={'User-Agent': 'Mozilla/5.0'})
 		web_byte = urlopen(req).read()
 		open('main.py',"w").write(web_byte.decode('utf-8'))
+		open('version',"w").write(str(lasted_version))
 		rprint('[green] Update Success, Restarting.')
 		os.system(sys.argv[0]+' main.py')
 
