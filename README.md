@@ -1,5 +1,4 @@
-<p> <a href="https://www.fontspace.com/category/3d"><img src="https://see.fontimg.com/api/renderfont4/DOzG0/eyJyIjoiZHciLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjNDM1MzVBIiwiYmdjIjoiI0ZGRkZGRiJ9/U3VycHJpc2UgTWUgIQ/concretepersonaluse-regular.png" alt="3D fonts"></a></p>
-
+<a href="https://www.fontspace.com/category/bold"><img src="https://see.fontimg.com/api/renderfont4/mLJAj/eyJyIjoiZnMiLCJoIjo3MSwidyI6MTAwMCwiZnMiOjcxLCJmZ2MiOiIjNDM1MzVBIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/U3VycHJpc2UgTWUgIQ/diesel-italic-personal-use-bold-italic.png" alt="Bold fonts"></a>
 ---
 ---
 
@@ -17,5 +16,5 @@ python3 main.py [-c|-v]
 
  option | effect
  -------|--------
- 	-c  | clear all downloaded images
- 	-v  | Display verbose
+ -c  | clear all downloaded images
+ -v  | Display verbose
