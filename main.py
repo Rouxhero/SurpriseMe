@@ -36,18 +36,23 @@ def startSearch(verbos,nb_img,task1,task1_step):
 			myUrl = url + code
 			if verbos :
 				task2 = progress.add_task("[yellow]Request URL ...", total=100)
-			req = Request(myUrl, headers={'User-Agent': 'Mozilla/5.0'})
-			if verbos :
-				progress.update(task2, advance=25)
-			seen.append(code)
-			web_byte = urlopen(req).read()
-			if verbos :
-				progress.update(task2, advance=25)
-			webpage = web_byte.decode('utf-8')
-			soup = BeautifulSoup(webpage ,features="html.parser")
-			if verbos :
-				progress.update(task2, advance=25)
-			data = soup.find_all("img",class_="screenshot-image")
+			data =[]
+			try :
+				req = Request(myUrl, headers={'User-Agent': 'Mozilla/5.0'})
+				if verbos :
+					progress.update(task2, advance=25)
+				seen.append(code)
+				web_byte = urlopen(req).read()
+				if verbos :
+					progress.update(task2, advance=25)
+				webpage = web_byte.decode('utf-8')
+				soup = BeautifulSoup(webpage ,features="html.parser")
+				if verbos :
+					progress.update(task2, advance=25)
+				data = soup.find_all("img",class_="screenshot-image")
+			except Exception as e:
+				if verbos:
+					rprint(f"[red]Error : {e}")
 			if len(data)>0:
 				data = data[0]
 				if verbos :
