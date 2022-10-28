@@ -1,4 +1,5 @@
-from urllib.request import Request, urlopen
+from urllib.request import Request, urlopen ,urlcleanup
+import urllib
 from random import randint as r
 from bs4 import BeautifulSoup
 from rich import print as rprint
@@ -78,11 +79,13 @@ def startSearch(verbos,nb_img,task1,task1_step):
 							rprint(e)
 
 def checkUpdate():
+	urlcleanup()
 	url = "https://raw.githubusercontent.com/Rouxhero/SurpriseMe/master/version"
 	req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 	web_byte = urlopen(req).read()
 	lasted_version = int(web_byte.decode('utf-8'))
 	current_version = int(open('version','r').read())
+	rprint(lasted_version,current_version)
 	if lasted_version > current_version:
 		rprint('[green] New version available. Updating version')
 		main_file = "https://raw.githubusercontent.com/Rouxhero/SurpriseMe/master/main.py"
